@@ -1,15 +1,15 @@
-package abstraction;
+package oops.abstraction;
 
-public class SavingAccount extends BankAccount{
+public class CurrentAccount extends BankAccount{
 
-    public SavingAccount(String accNumber, double balance){
+    public CurrentAccount(String accNumber, double balance){
         super(accNumber, balance);
     }
 
     public void deposit(String accNumber, double amount){
         double newBal = getBalance() + amount;
         setBalance(newBal);
-        System.out.println("deposited amount in savings account: " + amount);
+        System.out.println("deposited amount in current account: " + amount);
         System.out.println("Current Balance: " + getBalance());
     }
 
@@ -17,11 +17,11 @@ public class SavingAccount extends BankAccount{
         if(getBalance() >= amount){
             double newBal = getBalance() - amount;
             setBalance(newBal);
-            System.out.println("withdrawn amount in savings account: " + amount);
+            System.out.println("withdrawn amount in current account: " + amount);
             System.out.println("Current Balance: " + getBalance());
         }else {
             System.out.println("Insufficient balance");
-         }
 
+        }
     }
 }

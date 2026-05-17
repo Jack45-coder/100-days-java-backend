@@ -1,4 +1,4 @@
-package abstraction;
+package oops.abstraction;
 
 abstract public class BankAccount {
     private String accNumber;
