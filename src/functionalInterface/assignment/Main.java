@@ -10,5 +10,8 @@ public class Main {
 
         System.out.println("Sum: " + operation.add(90, 20));
         System.out.println(operation1.add(50, 80));
+
+        // THREAD INTERFACE
+        new Thread(() -> System.out.println("New Thread Created Successfully.")).start();
     }
 }
