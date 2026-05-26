@@ -9,7 +9,7 @@ public class FunctionInterfaceDemo {
 
     public static Function<Integer, Integer> squareFunc = (a) -> a*a;
 
-    // combined function
+    // combined function this is called chaining
     public static Function<Integer, Integer> combinedFunction = squareFunc.andThen(addFunc).andThen(subFunc);
 
     public static void main(String[] args) {
