@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 
 public class ConsumerDemo {
     public static void main(String[] args) {
-        Consumer<String> display = (s) -> System.out.println(s);
+        Consumer<String> display = System.out::println;
 
         List<String> names = List.of("Ram", "Shyam", "Mohan", "Karan");
 
