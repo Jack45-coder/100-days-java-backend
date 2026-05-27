@@ -2,6 +2,7 @@ package functionalInterface.inbuilt;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 
 public class RealExample {
@@ -10,6 +11,8 @@ public class RealExample {
         // <title> costs $<Price>
 
         BiFunction<String, Double, String> formatter = (title, price) -> title + " costs $" + price;
+
+        BiConsumer<String, Double> formatterConsumer = (title, price) -> System.out.println(title + " costs $" + price);
 
         Map<String, Double> books = new HashMap<>();
         books.put("Java Basics", 599.49);
@@ -23,6 +26,7 @@ public class RealExample {
 
         for(Map.Entry<String, Double> entry : books.entrySet()){
             String res = formatter.apply(entry.getKey(), entry.getValue());
+            formatterConsumer.accept(entry.getKey(), entry.getValue());
             System.out.println(res);
         }
 
