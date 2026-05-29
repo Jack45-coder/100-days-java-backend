@@ -29,5 +29,15 @@ public class StreamsDemo {
         ;
 
 
+        /*
+            # USE CASES
+            1. Filtering
+            2. Mapping
+            3. Aggregation
+            4. Searching
+            5. Iteration
+         */
+
+
     }
 }
