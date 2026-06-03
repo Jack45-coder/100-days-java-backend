@@ -1,10 +1,10 @@
 package functionalInterface.streams.intermediate;
 
 public class Book {
-    String title;
+    public String title;
     int publicationDate;
-    double price;
-    String category;
+    public double price;
+    public String category;
 
     public Book(String title, int publicationDate, double price, String category) {
         this.title = title;
@@ -18,5 +18,21 @@ public class Book {
         return "Book{" +
                 "TITLE: " + title + ", PRICE: " + price + ", CATEGORY: " + category + ", PUBLICATION: " + publicationDate +
                 '}';
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public int getPublicationDate() {
+        return publicationDate;
+    }
+
+    public double getPrice() {
+        return price;
     }
 }
