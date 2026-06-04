@@ -1,5 +1,6 @@
 package seven7;
 
+import java.io.FilterOutputStream;
 import java.util.Optional;
 
 public class NPEDemo {
@@ -31,7 +32,33 @@ public class NPEDemo {
         System.out.println(maybe.isEmpty());
 
         //get
-        System.out.println(maybe.get()); // throw error
+//        System.out.println(maybe.get()); // throw error
 
+
+        // orElse("default value")
+        System.out.println(optionalString.orElse("default")); // Java
+        System.out.println(maybe.orElse("default")); // default
+        System.out.println(maybe.orElse(null)); // null
+        System.out.println(empty.orElse("default")); // default
+        String temp = maybe.orElse("default");
+
+        // prElseGet(<supplier>)
+        String result = maybe.orElseGet(() ->{
+            System.out.println("Generating Default Value");
+            return "default";
+        });
+        System.out.println(result);
+
+        String result2 = optionalString.orElseGet(() ->{
+            System.out.println("Generating Default Value");
+            return "default";
+        });
+        System.out.println(result2);
+
+        // orElseThrow()
+        String newResult = optionalString.orElseThrow(
+                () -> new RuntimeException("Not Found")
+        );
+        System.out.println(newResult);
     }
 }
