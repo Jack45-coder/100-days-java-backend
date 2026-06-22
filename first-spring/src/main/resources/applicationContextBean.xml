@@ -6,7 +6,17 @@
 
     <!-- bean definitions here -->
     <bean id="myBean" class="com.example.demo.GreetingService">
+    </bean>
 
+    <bean id="EmailNotificationService" class="com.example.loose.EmailNotificationService" />
+    <bean id="UserServiceEmail" class="com.example.loose.UserService">
+        <property name="notificationService" ref="EmailNotificationService"/>
+    </bean>
+
+    <bean id="SMS" class="com.example.loose.SMS" />
+
+    <bean id="UserServiceSMS" class="com.example.loose.UserService">
+        <property name="notificationService" ref="SMS" />
     </bean>
 
 </beans>
