@@ -1,0 +1,11 @@
+package corejava.functionalInterface.inbuilt.BiConsumer;
+
+import java.util.function.BiConsumer;
+
+public class BiConsumerDemo {
+    public static void main(String[] args) {
+        BiConsumer<Integer, Integer> addConsumer = (a, b) -> System.out.println(a+b);
+
+        addConsumer.accept(10, 30);
+    }
+}
