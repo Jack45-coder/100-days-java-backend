@@ -16,7 +16,8 @@
     <bean id="SMS" class="com.example.loose.SMS" />
 
     <bean id="UserServiceSMS" class="com.example.loose.UserService">
-        <property name="notificationService" ref="SMS" />
+<!--        <property name="notificationService" ref="SMS" />-->
+        <constructor-arg ref="SMS"/>
     </bean>
 
 </beans>
