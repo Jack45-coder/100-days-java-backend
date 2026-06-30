@@ -24,4 +24,10 @@ public class UserController {
         }
         return "User Updated Successfully ";
     }
+
+    @DeleteMapping({"id"})
+    public String deleteUser(@PathVariable String id){
+        userDb.remove(id);
+        return "User deleted Successfully";
+    }
 }
