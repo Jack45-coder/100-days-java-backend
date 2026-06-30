@@ -3,7 +3,9 @@ package com.demo.first.app;
 import com.demo.first.User;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -25,9 +27,14 @@ public class UserController {
         return "User Updated Successfully ";
     }
 
-    @DeleteMapping({"id"})
+    @DeleteMapping("/{id}")
     public String deleteUser(@PathVariable String id){
         userDb.remove(id);
         return "User deleted Successfully";
+    }
+
+    @GetMapping
+    public List<User> getUsers(){
+        return new ArrayList<>(userDb.values());
     }
 }
