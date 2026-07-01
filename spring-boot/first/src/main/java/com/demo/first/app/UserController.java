@@ -36,7 +36,8 @@ public class UserController {
     public ResponseEntity<String> deleteUser(@PathVariable int id){
         if(!userDb.containsKey(id)) return ResponseEntity.notFound().build() ;
         userDb.remove(id);
-        return ResponseEntity.ok("User Deleted");
+//        return ResponseEntity.ok("User Deleted");
+        return ResponseEntity.noContent().build(); // no content
     }
 
     @GetMapping
