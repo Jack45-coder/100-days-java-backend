@@ -84,4 +84,17 @@ public class UserController {
                 .toList();
         return ResponseEntity.ok(users);
     }
+
+    //Request Header
+    @GetMapping("/info/{id}")
+    public String getInfo(
+            @PathVariable int id,
+            @RequestParam String name,
+            @RequestHeader("User-Agent") String userAgent
+    ){
+        System.out.println(userAgent);
+        return "User Agent: " + userAgent
+                + " : " + id
+                + " : " + name;
+    }
 }
