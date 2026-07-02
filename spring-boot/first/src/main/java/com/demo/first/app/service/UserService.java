@@ -1,6 +1,6 @@
-package com.demo.first.app;
+package com.demo.first.app.service;
 
-import com.demo.first.User;
+import com.demo.first.app.model.User;
 import org.springframework.stereotype.Service;
 
 
