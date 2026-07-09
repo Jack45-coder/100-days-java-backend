@@ -9,9 +9,9 @@ public class JDBCDemo {
         try(Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);){
             System.out.println("Connected to the database");
 //            insertStudent(conn,"Alice", "alice@gmail.com");
-            updateStudent(conn,1, "Bob", "alice@gmail.com");
-            selectStudents(conn);
-            deleteStudent(conn, 1);
+//            updateStudent(conn,1, "Bob", "alice@gmail.com");
+//            selectStudents(conn);
+//            deleteStudent(conn, 1);
         }catch (SQLException e) {
             throw new RuntimeException(e);
         }

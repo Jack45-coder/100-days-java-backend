@@ -1,0 +1,41 @@
+// --------------------JDBC---------------||-------------------------ORM----------------------------//
+
+String sql = "SELECT id, name, email, FROM users WHERE id = " + usersId;
+Statement stmt = conn.createStatement();
+ResultSet rs = stmt.executeQuery(sql);
+if(rs.next()){
+   User u = new User();
+   u.setId =(rs.getId(("id"));
+   u.setName(rs.getString("name"));
+   // ...
+}
+
+User in Database         ------------------->        USER class(java Code)
+Boilerplate code
+Manual mapping
+Error prone
+Hard o evolve
+
+HIBERNATE
+JPA -> Java/ Jakarta Persistence API
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+TASK                          WITHOUT ORM                        WITH ORM(like hibernate)
+Insert a user           Write INSERT SQL manually              save(user)
+Get all users           Write SELECT, map ResultSet manually   findAll()
+Handle relationship     Write Complex joins nested loops       Use @oneToMany, @manuToMany _ automatic mapping
+Schema changes          Update SQL in every query              ORM can auto-adept or run migration
+Transaction & sessions  Manually open/close connection,        ORM manages session & transactions automatically
+                                      manage commits
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+Layer/Component                                          Role in Architecture
+
+Entity                                               Java class mapped to a database table
+Configuration & Mapping Files                        Define DB connection + entity mappings
+SessionFactory                                       Heavy, app-wide factory that manages database connection and creates session
+Session                                              Lightweight, per-request object for CRUD and persistance operations
+Transaction                                          Manages commit/rollback of DB changes
+Persistence Context (1st-level cache)                Tracks and synchronizes entity states inside a Session
+(Optional) 2nd-Level Cache                           Actual storage layer
