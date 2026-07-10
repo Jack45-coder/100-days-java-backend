@@ -6,7 +6,7 @@ public class HibernateDemoMain {
 
 
         try {
-            UserClassHibernate user = new UserClassHibernate(2L,"Bob");
+            UserClassHibernate user = new UserClassHibernate("Bob");
             session.beginTransaction();
             session.persist(user); // save(user)
             session.getTransaction().commit();
