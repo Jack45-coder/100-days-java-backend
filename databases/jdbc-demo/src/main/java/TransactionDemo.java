@@ -6,7 +6,7 @@ public class TransactionDemo {
     private static final String PASSWORD = "Jack@1234";
 
     public static void main(String[] args) {
-        try(Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);) {
+        try(Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
             System.out.println("Connected to the database");
 
             // TURNED OFF AUTO COMMIT == NO AUTO SAVE
