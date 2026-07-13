@@ -10,12 +10,15 @@ public class UserClassHibernate {
     private Long id;
     private String name;
 
-    public UserClassHibernate(String name){
+    public UserClassHibernate() {
+    }
+
+    public UserClassHibernate(Long id, String name) {
+        this.id = id;
         this.name = name;
     }
 
-    public UserClassHibernate( Long id, String name) {
-        this.id = id;
+    public UserClassHibernate(String name) {
         this.name = name;
     }
 
