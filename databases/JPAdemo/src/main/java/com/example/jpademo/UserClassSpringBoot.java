@@ -12,6 +12,10 @@ public class UserClassSpringBoot {
     private Long id;
     private String name;
 
+    public UserClassSpringBoot() {
+
+    }
+
     public UserClassSpringBoot(String name){
         this.name = name;
     }
