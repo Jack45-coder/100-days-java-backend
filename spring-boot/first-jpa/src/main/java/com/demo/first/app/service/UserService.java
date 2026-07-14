@@ -27,6 +27,13 @@ public class UserService {
         logger.warn("Creating user.... WARN");
         logger.error("Creating user.... ERROR");
 
+        if (user.getProfile() != null)
+            user.getProfile().setUser(user);
+
+        if (user.getPosts() != null){
+            user.getPosts().forEach(post -> post.setUser(user));
+        }
+
         return userRepository.save(user);
     }
 
